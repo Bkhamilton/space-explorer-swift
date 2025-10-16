@@ -1,9 +1,11 @@
 import SwiftUI
+import Combine
 
 struct MarsView: View {
     @State private var _weatherData: [MarsWeather] = MarsWeather.sampleData
     @State private var isLoading = false
     @State private var errorMessage: String?
+    @State private var cancellables = Set<AnyCancellable>()
     
     // Public accessor for testing
     var weatherData: [MarsWeather] {
@@ -272,24 +274,29 @@ struct MarsView: View {
         isLoading = true
         errorMessage = nil
         
-        InSightService.shared.fetchMarsWeather { result in
-            DispatchQueue.main.async {
-                isLoading = false
-                
-                switch result {
-                case .success(let data):
-                    let parsedWeather = InSightService.shared.parseMarsWeatherData(from: data)
+        InSightService.shared.fetchMarsWeatherPublisher()
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { [self] completion in
+                    isLoading = false
+                    
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        errorMessage = "InSight mission ended. Showing sample data."
+                        print("Failed to load Mars weather: \(error)")
+                    }
+                },
+                receiveValue: { [self] parsedWeather in
                     if !parsedWeather.isEmpty {
                         _weatherData = parsedWeather
                     } else {
                         errorMessage = "InSight mission ended. Showing sample data."
                     }
-                case .failure(let error):
-                    errorMessage = "InSight mission ended. Showing sample data."
-                    print("Failed to load Mars weather: \(error)")
                 }
-            }
-        }
+            )
+            .store(in: &cancellables)
     }
     
     private func formatUTCTime(_ utcString: String) -> String {
