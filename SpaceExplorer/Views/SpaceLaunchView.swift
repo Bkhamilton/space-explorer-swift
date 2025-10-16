@@ -45,6 +45,14 @@ struct SpaceLaunchView: View {
     }
     
     // statusColor logic moved to SpaceLaunchHeaderSection
+    private func setupDebouncing() {
+        searchSubject
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .sink { searchValue in
+                debouncedSearchText = searchValue
+            }
+            .store(in: &cancellables)
+    }    
 }
 
 #Preview {
