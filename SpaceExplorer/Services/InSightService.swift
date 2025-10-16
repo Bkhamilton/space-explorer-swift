@@ -90,42 +90,80 @@ class InSightService {
                     if let solData = json[solKey] as? [String: Any],
                        let sol = Int(solKey) {
                         
-                        // Extract temperature data if available
-                        var minTemp = -89
-                        var maxTemp = -18
-                        if let at = solData["AT"] as? [String: Any],
-                           let av = at["av"] as? Double {
-                            minTemp = Int(av - 35)
-                            maxTemp = Int(av)
+                        // Extract temperature data
+                        var tempData = TemperatureData(average: -62.3, minimum: -96.9, maximum: -15.9, count: 177556)
+                        if let at = solData["AT"] as? [String: Any] {
+                            let avg = at["av"] as? Double ?? -62.3
+                            let min = at["mn"] as? Double ?? -96.9
+                            let max = at["mx"] as? Double ?? -15.9
+                            let ct = at["ct"] as? Int ?? 177556
+                            tempData = TemperatureData(average: avg, minimum: min, maximum: max, count: ct)
                         }
                         
-                        // Extract pressure data if available
-                        var pressure = 750
-                        if let pre = solData["PRE"] as? [String: Any],
-                           let av = pre["av"] as? Double {
-                            pressure = Int(av)
+                        // Extract pressure data
+                        var pressureData = PressureData(average: 750.6, minimum: 722.1, maximum: 768.8, count: 887776)
+                        if let pre = solData["PRE"] as? [String: Any] {
+                            let avg = pre["av"] as? Double ?? 750.6
+                            let min = pre["mn"] as? Double ?? 722.1
+                            let max = pre["mx"] as? Double ?? 768.8
+                            let ct = pre["ct"] as? Int ?? 887776
+                            pressureData = PressureData(average: avg, minimum: min, maximum: max, count: ct)
                         }
                         
-                        // Extract wind speed data if available
-                        var windSpeed = 12
-                        if let hws = solData["HWS"] as? [String: Any],
-                           let av = hws["av"] as? Double {
-                            windSpeed = Int(av)
+                        // Extract wind speed data
+                        var windSpeedData = WindSpeedData(average: 7.2, minimum: 1.1, maximum: 22.5, count: 88628)
+                        if let hws = solData["HWS"] as? [String: Any] {
+                            let avg = hws["av"] as? Double ?? 7.2
+                            let min = hws["mn"] as? Double ?? 1.1
+                            let max = hws["mx"] as? Double ?? 22.5
+                            let ct = hws["ct"] as? Int ?? 88628
+                            windSpeedData = WindSpeedData(average: avg, minimum: min, maximum: max, count: ct)
                         }
                         
-                        // Extract season and date
+                        // Extract wind direction data
+                        var windDirectionData: WindDirectionData? = nil
+                        if let wd = solData["WD"] as? [String: Any],
+                           let mostCommonData = wd["most_common"] as? [String: Any] {
+                            let degrees = mostCommonData["compass_degrees"] as? Double ?? 0.0
+                            let point = mostCommonData["compass_point"] as? String ?? "N"
+                            let right = mostCommonData["compass_right"] as? Double ?? 0.0
+                            let up = mostCommonData["compass_up"] as? Double ?? 1.0
+                            let ct = mostCommonData["ct"] as? Int ?? 0
+                            
+                            let mostCommon = WindDirectionPoint(
+                                compassDegrees: degrees,
+                                compassPoint: point,
+                                compassRight: right,
+                                compassUp: up,
+                                count: ct
+                            )
+                            
+                            windDirectionData = WindDirectionData(mostCommon: mostCommon, directions: [])
+                        }
+                        
+                        // Extract season and date information
                         let season = solData["Season"] as? String ?? "Unknown"
+                        let northernSeason = solData["Northern_season"] as? String ?? "Unknown"
+                        let southernSeason = solData["Southern_season"] as? String ?? "Unknown"
+                        let monthOrdinal = solData["Month_ordinal"] as? Int ?? 1
+                        
                         let firstUTC = solData["First_UTC"] as? String ?? ""
+                        let lastUTC = solData["Last_UTC"] as? String ?? ""
                         let earthDate = extractDate(from: firstUTC)
                         
                         let weather = MarsWeather(
                             sol: sol,
                             earthDate: earthDate,
-                            minTemp: minTemp,
-                            maxTemp: maxTemp,
-                            pressure: pressure,
-                            windSpeed: windSpeed,
-                            season: season
+                            firstUTC: firstUTC,
+                            lastUTC: lastUTC,
+                            temperature: tempData,
+                            pressure: pressureData,
+                            windSpeed: windSpeedData,
+                            windDirection: windDirectionData,
+                            season: season,
+                            northernSeason: northernSeason,
+                            southernSeason: southernSeason,
+                            monthOrdinal: monthOrdinal
                         )
                         weatherData.append(weather)
                     }
