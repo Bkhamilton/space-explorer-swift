@@ -96,7 +96,7 @@ struct SpaceLaunchView: View {
             .store(in: &cancellables)
     }
     
-    private func statusColor(for status: String) -> Color {
+    func statusColor(for status: String) -> Color {
         switch status {
         case "Scheduled":
             return .blue
