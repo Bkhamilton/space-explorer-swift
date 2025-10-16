@@ -6,6 +6,22 @@ struct SpacePicture: Identifiable {
     let description: String
     let imageName: String
     let date: String
+    
+    // Initialize from APOD API response
+    init(title: String, description: String, imageName: String, date: String) {
+        self.title = title
+        self.description = description
+        self.imageName = imageName
+        self.date = date
+    }
+    
+    // Create SpacePicture from APODResponse
+    init(from apod: APODResponse) {
+        self.title = apod.title
+        self.description = apod.explanation
+        self.imageName = "photo" // Default SF Symbol for pictures from API
+        self.date = apod.date
+    }
 }
 
 // Hardcoded sample data
