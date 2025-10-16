@@ -98,7 +98,7 @@ For detailed test documentation, see [TEST_DOCUMENTATION.md](TEST_DOCUMENTATION.
 ## Testing
 
 The project includes comprehensive test coverage:
-- **96 total tests** covering models, views, and UI
+- **101 total tests** covering models, views, and UI
 - Unit tests for all data models
 - Integration tests for all views
 - End-to-end UI tests for user interactions

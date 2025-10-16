@@ -168,19 +168,19 @@ End-to-end UI tests:
 
 ### Models (Unit Tests)
 - ✅ SpacePicture: 8 tests
-- ✅ MarsWeather: 13 tests
+- ✅ MarsWeather: 12 tests
 - ✅ SpaceLaunch: 16 tests
 
 ### Views (Integration Tests)
-- ✅ HomeView: 8 tests
-- ✅ MarsView: 12 tests
-- ✅ SpaceLaunchView: 17 tests
+- ✅ HomeView: 11 tests
+- ✅ MarsView: 13 tests
+- ✅ SpaceLaunchView: 19 tests
 - ✅ ContentView: 2 tests
 
 ### UI Tests
 - ✅ SpaceExplorerUITests: 20 tests
 
-**Total: 96 tests**
+**Total: 101 tests**
 
 ## Running the Tests
 
