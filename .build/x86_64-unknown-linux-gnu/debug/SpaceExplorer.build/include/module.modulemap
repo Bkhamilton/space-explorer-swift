@@ -1,0 +1,3 @@
+module SpaceExplorer {
+    header "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/include/SpaceExplorer-Swift.h"
+}

@@ -1,0 +1,61 @@
+{
+  "": {
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/master.swiftdeps"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/ContentView.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/ContentView.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/ContentView.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/ContentView.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/ContentView.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/Models/MarsWeather.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsWeather.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsWeather.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsWeather~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsWeather.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsWeather.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/Models/SpaceLaunch.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunch.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunch.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunch~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunch.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunch.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/Models/SpacePicture.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpacePicture.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpacePicture.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpacePicture~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpacePicture.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpacePicture.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/SpaceExplorerApp.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceExplorerApp.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceExplorerApp.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceExplorerApp~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceExplorerApp.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceExplorerApp.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/Views/HomeView.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/HomeView.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/HomeView.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/HomeView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/HomeView.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/HomeView.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/Views/MarsView.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsView.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsView.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsView.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/MarsView.dia"
+  },
+  "/home/runner/work/space-explorer-swift/space-explorer-swift/SpaceExplorer/Views/SpaceLaunchView.swift": {
+    "dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunchView.d",
+    "object": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunchView.swift.o",
+    "swiftmodule": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunchView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunchView.swiftdeps",
+    "diagnostics": "/home/runner/work/space-explorer-swift/space-explorer-swift/.build/x86_64-unknown-linux-gnu/debug/SpaceExplorer.build/SpaceLaunchView.dia"
+  }
+}
