@@ -16,7 +16,32 @@
 		A1000013000000000000001 /* MarsWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014000000000000001 /* MarsWeather.swift */; };
 		A1000015000000000000001 /* SpaceLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016000000000000001 /* SpaceLaunch.swift */; };
 		A1000017000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000018000000000000001 /* Assets.xcassets */; };
+		A1000050000000000000001 /* SpacePictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000051000000000000001 /* SpacePictureTests.swift */; };
+		A1000052000000000000001 /* MarsWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000053000000000000001 /* MarsWeatherTests.swift */; };
+		A1000054000000000000001 /* SpaceLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000055000000000000001 /* SpaceLaunchTests.swift */; };
+		A1000056000000000000001 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000057000000000000001 /* HomeViewTests.swift */; };
+		A1000058000000000000001 /* MarsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000059000000000000001 /* MarsViewTests.swift */; };
+		A1000060000000000000001 /* SpaceLaunchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000061000000000000001 /* SpaceLaunchViewTests.swift */; };
+		A1000062000000000000001 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000063000000000000001 /* ContentViewTests.swift */; };
+		A1000070000000000000001 /* SpaceExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000071000000000000001 /* SpaceExplorerUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1000040000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000029000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1000025000000000000001;
+			remoteInfo = SpaceExplorer;
+		};
+		A1000041000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000029000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1000025000000000000001;
+			remoteInfo = SpaceExplorer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A1000000000000000000001 /* SpaceExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,10 +54,34 @@
 		A1000014000000000000001 /* MarsWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsWeather.swift; sourceTree = "<group>"; };
 		A1000016000000000000001 /* SpaceLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLaunch.swift; sourceTree = "<group>"; };
 		A1000018000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000035000000000000001 /* SpaceExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000051000000000000001 /* SpacePictureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePictureTests.swift; sourceTree = "<group>"; };
+		A1000053000000000000001 /* MarsWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsWeatherTests.swift; sourceTree = "<group>"; };
+		A1000055000000000000001 /* SpaceLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLaunchTests.swift; sourceTree = "<group>"; };
+		A1000057000000000000001 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
+		A1000059000000000000001 /* MarsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsViewTests.swift; sourceTree = "<group>"; };
+		A1000061000000000000001 /* SpaceLaunchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceLaunchViewTests.swift; sourceTree = "<group>"; };
+		A1000063000000000000001 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
+		A1000065000000000000001 /* SpaceExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000071000000000000001 /* SpaceExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceExplorerUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A1000019000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000036000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000066000000000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				A1000021000000000000001 /* SpaceExplorer */,
+				A1000037000000000000001 /* SpaceExplorerTests */,
+				A1000067000000000000001 /* SpaceExplorerUITests */,
 				A1000022000000000000001 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				A1000000000000000000001 /* SpaceExplorer.app */,
+				A1000035000000000000001 /* SpaceExplorerTests.xctest */,
+				A1000065000000000000001 /* SpaceExplorerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +143,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A1000037000000000000001 /* SpaceExplorerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1000051000000000000001 /* SpacePictureTests.swift */,
+				A1000053000000000000001 /* MarsWeatherTests.swift */,
+				A1000055000000000000001 /* SpaceLaunchTests.swift */,
+				A1000057000000000000001 /* HomeViewTests.swift */,
+				A1000059000000000000001 /* MarsViewTests.swift */,
+				A1000061000000000000001 /* SpaceLaunchViewTests.swift */,
+				A1000063000000000000001 /* ContentViewTests.swift */,
+			);
+			path = SpaceExplorerTests;
+			sourceTree = "<group>";
+		};
+		A1000067000000000000001 /* SpaceExplorerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A1000071000000000000001 /* SpaceExplorerUITests.swift */,
+			);
+			path = SpaceExplorerUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +185,42 @@
 			productReference = A1000000000000000000001 /* SpaceExplorer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A1000038000000000000001 /* SpaceExplorerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000039000000000000001 /* Build configuration list for PBXNativeTarget "SpaceExplorerTests" */;
+			buildPhases = (
+				A1000042000000000000001 /* Sources */,
+				A1000036000000000000001 /* Frameworks */,
+				A1000043000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1000044000000000000001 /* PBXTargetDependency */,
+			);
+			name = SpaceExplorerTests;
+			productName = SpaceExplorerTests;
+			productReference = A1000035000000000000001 /* SpaceExplorerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A1000068000000000000001 /* SpaceExplorerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000069000000000000001 /* Build configuration list for PBXNativeTarget "SpaceExplorerUITests" */;
+			buildPhases = (
+				A1000072000000000000001 /* Sources */,
+				A1000066000000000000001 /* Frameworks */,
+				A1000073000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1000074000000000000001 /* PBXTargetDependency */,
+			);
+			name = SpaceExplorerUITests;
+			productName = SpaceExplorerUITests;
+			productReference = A1000065000000000000001 /* SpaceExplorerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,6 +233,14 @@
 				TargetAttributes = {
 					A1000025000000000000001 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					A1000038000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A1000025000000000000001;
+					};
+					A1000068000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A1000025000000000000001;
 					};
 				};
 			};
@@ -139,6 +258,8 @@
 			projectRoot = "";
 			targets = (
 				A1000025000000000000001 /* SpaceExplorer */,
+				A1000038000000000000001 /* SpaceExplorerTests */,
+				A1000068000000000000001 /* SpaceExplorerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -149,6 +270,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000017000000000000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000043000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000073000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +305,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1000042000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000050000000000000001 /* SpacePictureTests.swift in Sources */,
+				A1000052000000000000001 /* MarsWeatherTests.swift in Sources */,
+				A1000054000000000000001 /* SpaceLaunchTests.swift in Sources */,
+				A1000056000000000000001 /* HomeViewTests.swift in Sources */,
+				A1000058000000000000001 /* MarsViewTests.swift in Sources */,
+				A1000060000000000000001 /* SpaceLaunchViewTests.swift in Sources */,
+				A1000062000000000000001 /* ContentViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000072000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000070000000000000001 /* SpaceExplorerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1000044000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1000025000000000000001 /* SpaceExplorer */;
+			targetProxy = A1000040000000000000001 /* PBXContainerItemProxy */;
+		};
+		A1000074000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1000025000000000000001 /* SpaceExplorer */;
+			targetProxy = A1000041000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A1000031000000000000001 /* Debug */ = {
@@ -348,6 +518,76 @@
 			};
 			name = Release;
 		};
+		A1000045000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spaceexplorer.SpaceExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpaceExplorer";
+			};
+			name = Debug;
+		};
+		A1000046000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spaceexplorer.SpaceExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpaceExplorer";
+			};
+			name = Release;
+		};
+		A1000075000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spaceexplorer.SpaceExplorerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpaceExplorer;
+			};
+			name = Debug;
+		};
+		A1000076000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spaceexplorer.SpaceExplorerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpaceExplorer;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -365,6 +605,24 @@
 			buildConfigurations = (
 				A1000031000000000000001 /* Debug */,
 				A1000032000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000039000000000000001 /* Build configuration list for PBXNativeTarget "SpaceExplorerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000045000000000000001 /* Debug */,
+				A1000046000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000069000000000000001 /* Build configuration list for PBXNativeTarget "SpaceExplorerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000075000000000000001 /* Debug */,
+				A1000076000000000000001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

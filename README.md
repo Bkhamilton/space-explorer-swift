@@ -31,6 +31,18 @@ SpaceExplorer/
 │   ├── MarsWeather.swift       # Mars weather data model
 │   └── SpaceLaunch.swift       # Space launch data model
 └── Assets.xcassets/            # App assets and icons
+
+SpaceExplorerTests/
+├── SpacePictureTests.swift     # Unit tests for SpacePicture model
+├── MarsWeatherTests.swift      # Unit tests for MarsWeather model
+├── SpaceLaunchTests.swift      # Unit tests for SpaceLaunch model
+├── HomeViewTests.swift         # Integration tests for HomeView
+├── MarsViewTests.swift         # Integration tests for MarsView
+├── SpaceLaunchViewTests.swift  # Integration tests for SpaceLaunchView
+└── ContentViewTests.swift      # Integration tests for ContentView
+
+SpaceExplorerUITests/
+└── SpaceExplorerUITests.swift  # End-to-end UI tests
 ```
 
 ## Requirements
@@ -45,6 +57,20 @@ SpaceExplorer/
 2. Open `SpaceExplorer.xcodeproj` in Xcode
 3. Select a simulator or device
 4. Build and run (⌘R)
+
+## Running Tests
+
+### Unit & Integration Tests
+- Press ⌘U in Xcode to run all tests
+- Or select Product > Test from the menu
+- View results in the Test Navigator (⌘6)
+
+### Command Line
+```bash
+xcodebuild test -project SpaceExplorer.xcodeproj -scheme SpaceExplorer -destination 'platform=iOS Simulator,name=iPhone 15'
+```
+
+For detailed test documentation, see [TEST_DOCUMENTATION.md](TEST_DOCUMENTATION.md).
 
 ## Data Models
 
@@ -68,3 +94,13 @@ SpaceExplorer/
 - Image caching and loading
 - Search and filter capabilities
 - Favorites functionality
+
+## Testing
+
+The project includes comprehensive test coverage:
+- **101 total tests** covering models, views, and UI
+- Unit tests for all data models
+- Integration tests for all views
+- End-to-end UI tests for user interactions
+
+See [TEST_DOCUMENTATION.md](TEST_DOCUMENTATION.md) for complete test documentation.
