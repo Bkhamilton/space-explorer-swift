@@ -29,28 +29,46 @@ final class InSightServiceTests: XCTestCase {
         // Given
         let json = """
         {
-            "sol_keys": ["4012", "4011"],
-            "4012": {
-                "First_UTC": "2024-10-15T00:00:00Z",
-                "Last_UTC": "2024-10-15T23:59:59Z",
-                "Season": "Month 6",
+            "sol_keys": ["675", "674"],
+            "675": {
+                "First_UTC": "2020-10-19T18:32:20Z",
+                "Last_UTC": "2020-10-20T19:11:55Z",
+                "Season": "fall",
+                "Northern_season": "early winter",
+                "Southern_season": "early summer",
+                "Month_ordinal": 10,
                 "AT": {
-                    "av": -18.5,
-                    "ct": 100
+                    "av": -62.314,
+                    "mn": -96.872,
+                    "mx": -15.908,
+                    "ct": 177556
                 },
                 "PRE": {
-                    "av": 750.2,
-                    "ct": 100
+                    "av": 750.563,
+                    "mn": 722.0901,
+                    "mx": 768.791,
+                    "ct": 887776
                 },
                 "HWS": {
-                    "av": 12.3,
-                    "ct": 100
+                    "av": 7.233,
+                    "mn": 1.051,
+                    "mx": 22.455,
+                    "ct": 88628
+                },
+                "WD": {
+                    "most_common": {
+                        "compass_degrees": 292.5,
+                        "compass_point": "WNW",
+                        "compass_right": -0.923879532511,
+                        "compass_up": 0.382683432365,
+                        "ct": 30283
+                    }
                 }
             },
-            "4011": {
-                "First_UTC": "2024-10-14T00:00:00Z",
-                "Last_UTC": "2024-10-14T23:59:59Z",
-                "Season": "Month 6"
+            "674": {
+                "First_UTC": "2020-10-18T18:32:20Z",
+                "Last_UTC": "2020-10-19T19:11:55Z",
+                "Season": "fall"
             }
         }
         """
@@ -63,11 +81,36 @@ final class InSightServiceTests: XCTestCase {
         XCTAssertGreaterThan(result.count, 0, "Should parse valid data")
         
         if let firstWeather = result.first {
-            XCTAssertEqual(firstWeather.sol, 4012)
-            XCTAssertEqual(firstWeather.earthDate, "2024-10-15")
-            XCTAssertEqual(firstWeather.season, "Month 6")
-            XCTAssertEqual(firstWeather.pressure, 750)
-            XCTAssertEqual(firstWeather.windSpeed, 12)
+            XCTAssertEqual(firstWeather.sol, 675)
+            XCTAssertEqual(firstWeather.earthDate, "2020-10-19")
+            XCTAssertEqual(firstWeather.season, "fall")
+            XCTAssertEqual(firstWeather.northernSeason, "early winter")
+            XCTAssertEqual(firstWeather.southernSeason, "early summer")
+            XCTAssertEqual(firstWeather.monthOrdinal, 10)
+            
+            // Test temperature data
+            XCTAssertEqual(firstWeather.temperature.average, -62.314, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.temperature.minimum, -96.872, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.temperature.maximum, -15.908, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.temperature.count, 177556)
+            
+            // Test pressure data
+            XCTAssertEqual(firstWeather.pressure.average, 750.563, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.pressure.minimum, 722.0901, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.pressure.maximum, 768.791, accuracy: 0.01)
+            
+            // Test wind speed data
+            XCTAssertEqual(firstWeather.windSpeed.average, 7.233, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.windSpeed.minimum, 1.051, accuracy: 0.01)
+            XCTAssertEqual(firstWeather.windSpeed.maximum, 22.455, accuracy: 0.01)
+            
+            // Test wind direction
+            XCTAssertNotNil(firstWeather.windDirection)
+            if let windDir = firstWeather.windDirection, let mostCommon = windDir.mostCommon {
+                XCTAssertEqual(mostCommon.compassDegrees, 292.5, accuracy: 0.01)
+                XCTAssertEqual(mostCommon.compassPoint, "WNW")
+                XCTAssertEqual(mostCommon.count, 30283)
+            }
         }
     }
     
@@ -79,7 +122,11 @@ final class InSightServiceTests: XCTestCase {
             "sol_keys": ["4012"],
             "4012": {
                 "First_UTC": "2024-10-15T12:30:45Z",
-                "Season": "Month 6"
+                "Last_UTC": "2024-10-15T23:59:59Z",
+                "Season": "fall",
+                "Northern_season": "early winter",
+                "Southern_season": "early summer",
+                "Month_ordinal": 10
             }
         }
         """
@@ -103,7 +150,11 @@ final class InSightServiceTests: XCTestCase {
             solKeys.append("\(i)")
             solData["\(i)"] = [
                 "First_UTC": "2024-10-15T00:00:00Z",
-                "Season": "Month 6"
+                "Last_UTC": "2024-10-15T23:59:59Z",
+                "Season": "fall",
+                "Northern_season": "early winter",
+                "Southern_season": "early summer",
+                "Month_ordinal": 10
             ]
         }
         solData["sol_keys"] = solKeys
@@ -117,14 +168,18 @@ final class InSightServiceTests: XCTestCase {
         XCTAssertLessThanOrEqual(result.count, 5, "Should limit to 5 sols maximum")
     }
     
-    func testParseMarsWeatherDataHandlesMissingTemperature() {
+    func testParseMarsWeatherDataHandlesMissingData() {
         // Given
         let json = """
         {
             "sol_keys": ["4012"],
             "4012": {
                 "First_UTC": "2024-10-15T00:00:00Z",
-                "Season": "Month 6"
+                "Last_UTC": "2024-10-15T23:59:59Z",
+                "Season": "fall",
+                "Northern_season": "early winter",
+                "Southern_season": "early summer",
+                "Month_ordinal": 10
             }
         }
         """
@@ -135,9 +190,10 @@ final class InSightServiceTests: XCTestCase {
         
         // Then
         if let weather = result.first {
-            // Should use default values when temperature data is missing
-            XCTAssertNotEqual(weather.minTemp, 0)
-            XCTAssertNotEqual(weather.maxTemp, 0)
+            // Should use default values when detailed data is missing
+            XCTAssertNotNil(weather.temperature)
+            XCTAssertNotNil(weather.pressure)
+            XCTAssertNotNil(weather.windSpeed)
         }
     }
 }

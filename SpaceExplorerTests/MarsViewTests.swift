@@ -48,9 +48,11 @@ final class MarsViewTests: XCTestCase {
             XCTAssertGreaterThan(weather.sol, 0, "Each weather entry should have a valid sol")
             XCTAssertFalse(weather.earthDate.isEmpty, "Each weather entry should have an earth date")
             XCTAssertLessThan(weather.minTemp, weather.maxTemp, "Min temp should be less than max temp")
-            XCTAssertGreaterThan(weather.pressure, 0, "Each weather entry should have a valid pressure")
-            XCTAssertGreaterThanOrEqual(weather.windSpeed, 0, "Wind speed should be non-negative")
+            XCTAssertGreaterThan(weather.averagePressure, 0, "Each weather entry should have a valid pressure")
+            XCTAssertGreaterThanOrEqual(weather.averageWindSpeed, 0, "Wind speed should be non-negative")
             XCTAssertFalse(weather.season.isEmpty, "Each weather entry should have a season")
+            XCTAssertFalse(weather.northernSeason.isEmpty, "Each weather entry should have a northern season")
+            XCTAssertFalse(weather.southernSeason.isEmpty, "Each weather entry should have a southern season")
         }
     }
     
@@ -127,9 +129,9 @@ final class MarsViewTests: XCTestCase {
         // When & Then
         for weather in view.weatherData {
             // Mars atmospheric pressure typically ranges from 400 to 870 Pascals
-            XCTAssertGreaterThanOrEqual(weather.pressure, 400,
+            XCTAssertGreaterThanOrEqual(weather.averagePressure, 400,
                 "Pressure should be within realistic range for sol \(weather.sol)")
-            XCTAssertLessThanOrEqual(weather.pressure, 870,
+            XCTAssertLessThanOrEqual(weather.averagePressure, 870,
                 "Pressure should be within realistic range for sol \(weather.sol)")
         }
     }
@@ -141,9 +143,9 @@ final class MarsViewTests: XCTestCase {
         // When & Then
         for weather in view.weatherData {
             // Mars wind speeds typically range from 0 to 60 m/s
-            XCTAssertGreaterThanOrEqual(weather.windSpeed, 0,
+            XCTAssertGreaterThanOrEqual(weather.averageWindSpeed, 0,
                 "Wind speed should be non-negative for sol \(weather.sol)")
-            XCTAssertLessThanOrEqual(weather.windSpeed, 60,
+            XCTAssertLessThanOrEqual(weather.averageWindSpeed, 60,
                 "Wind speed should be within realistic range for sol \(weather.sol)")
         }
     }
