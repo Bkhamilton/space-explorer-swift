@@ -229,4 +229,39 @@ final class SpaceLaunchViewTests: XCTestCase {
         // Then
         XCTAssertNotNil(body, "SpaceLaunchView body should not be nil")
     }
+    
+    // MARK: - Search Functionality Tests
+    
+    func testFilteredLaunchesReturnsAllWhenSearchIsEmpty() {
+        // Given
+        let view = SpaceLaunchView()
+        
+        // When
+        let filtered = view.filteredLaunches
+        
+        // Then
+        XCTAssertEqual(filtered.count, view.launches.count, "Should return all launches when search is empty")
+    }
+    
+    func testSearchTextPropertyExists() {
+        // Given
+        let view = SpaceLaunchView()
+        
+        // When
+        let searchText = view.searchText
+        
+        // Then
+        XCTAssertEqual(searchText, "", "Search text should be empty by default")
+    }
+    
+    func testDebouncedSearchTextPropertyExists() {
+        // Given
+        let view = SpaceLaunchView()
+        
+        // When
+        let debouncedText = view.debouncedSearchText
+        
+        // Then
+        XCTAssertEqual(debouncedText, "", "Debounced search text should be empty by default")
+    }
 }

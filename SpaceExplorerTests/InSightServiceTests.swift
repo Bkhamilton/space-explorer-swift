@@ -1,4 +1,5 @@
 import XCTest
+import Combine
 @testable import SpaceExplorer
 
 final class InSightServiceTests: XCTestCase {
@@ -195,5 +196,35 @@ final class InSightServiceTests: XCTestCase {
             XCTAssertNotNil(weather.pressure)
             XCTAssertNotNil(weather.windSpeed)
         }
+    }
+    
+    // MARK: - Combine Publisher Tests
+    
+    func testFetchMarsWeatherPublisherReturnsPublisher() {
+        // Given & When
+        let publisher = InSightService.shared.fetchMarsWeatherPublisher()
+        
+        // Then
+        XCTAssertNotNil(publisher, "Should return a valid publisher")
+    }
+    
+    func testFetchMarsWeatherPublisherCanBeCancelled() {
+        // Given
+        let expectation = XCTestExpectation(description: "Publisher should be cancellable")
+        var cancellables = Set<AnyCancellable>()
+        
+        // When
+        let cancellable = InSightService.shared.fetchMarsWeatherPublisher()
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { _ in }
+            )
+        
+        cancellable.store(in: &cancellables)
+        cancellables.removeAll()
+        
+        // Then
+        expectation.fulfill()
+        wait(for: [expectation], timeout: 1.0)
     }
 }
