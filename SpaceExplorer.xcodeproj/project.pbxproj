@@ -24,6 +24,11 @@
 		A1000060000000000000001 /* SpaceLaunchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000061000000000000001 /* SpaceLaunchViewTests.swift */; };
 		A1000062000000000000001 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000063000000000000001 /* ContentViewTests.swift */; };
 		A1000070000000000000001 /* SpaceExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000071000000000000001 /* SpaceExplorerUITests.swift */; };
+		A1116FEA17EAB54233AC8740 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100183D55D51E41F6AD323B /* APIConfiguration.swift */; };
+		A112BEAFAD946442CB9024D5 /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1769422A5584A4976AC36E2 /* APODService.swift */; };
+		A12FA704D29916436DB24C9E /* InSightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10ECA5F64E1D44F219D6502 /* InSightService.swift */; };
+		A1A17E2DCAD5314166A138BB /* APODServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB6A1E14558945D39D1152 /* APODServiceTests.swift */; };
+		A143701460BCBE4202B66A1D /* InSightServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB6B529AE444FA1A2F038 /* InSightServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		A1000063000000000000001 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		A1000065000000000000001 /* SpaceExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000071000000000000001 /* SpaceExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceExplorerUITests.swift; sourceTree = "<group>"; };
+		A100183D55D51E41F6AD323B /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		A1769422A5584A4976AC36E2 /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
+		A10ECA5F64E1D44F219D6502 /* InSightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSightService.swift; sourceTree = "<group>"; };
+		A1BB6A1E14558945D39D1152 /* APODServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODServiceTests.swift; sourceTree = "<group>"; };
+		A12BB6B529AE444FA1A2F038 /* InSightServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSightServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +119,8 @@
 				A1000023000000000000001 /* Views */,
 				A1000024000000000000001 /* Models */,
 				A1000018000000000000001 /* Assets.xcassets */,
-			);
+							A104CE2D2C70804F9D949A56 /* Services */,
+);
 			path = SpaceExplorer;
 			sourceTree = "<group>";
 		};
@@ -153,7 +164,9 @@
 				A1000059000000000000001 /* MarsViewTests.swift */,
 				A1000061000000000000001 /* SpaceLaunchViewTests.swift */,
 				A1000063000000000000001 /* ContentViewTests.swift */,
-			);
+							A1BB6A1E14558945D39D1152 /* APODServiceTests.swift */,
+				A12BB6B529AE444FA1A2F038 /* InSightServiceTests.swift */,
+);
 			path = SpaceExplorerTests;
 			sourceTree = "<group>";
 		};
@@ -163,6 +176,16 @@
 				A1000071000000000000001 /* SpaceExplorerUITests.swift */,
 			);
 			path = SpaceExplorerUITests;
+			sourceTree = "<group>";
+		};
+		A104CE2D2C70804F9D949A56 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A100183D55D51E41F6AD323B /* APIConfiguration.swift */,
+				A1769422A5584A4976AC36E2 /* APODService.swift */,
+				A10ECA5F64E1D44F219D6502 /* InSightService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
