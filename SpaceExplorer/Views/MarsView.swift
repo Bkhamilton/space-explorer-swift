@@ -1,9 +1,14 @@
 import SwiftUI
 
 struct MarsView: View {
-    @State private var weatherData: [MarsWeather] = MarsWeather.sampleData
+    @State private var _weatherData: [MarsWeather] = MarsWeather.sampleData
     @State private var isLoading = false
     @State private var errorMessage: String?
+    
+    // Public accessor for testing
+    var weatherData: [MarsWeather] {
+        return _weatherData
+    }
     
     var body: some View {
         NavigationView {
@@ -21,7 +26,7 @@ struct MarsView: View {
                         .multilineTextAlignment(.center)
                 }
                 
-                List(weatherData) { weather in
+                List(_weatherData) { weather in
                     VStack(alignment: .leading, spacing: 12) {
                         HStack {
                             VStack(alignment: .leading) {
@@ -105,7 +110,7 @@ struct MarsView: View {
                 case .success(let data):
                     let parsedWeather = InSightService.shared.parseMarsWeatherData(from: data)
                     if !parsedWeather.isEmpty {
-                        weatherData = parsedWeather
+                        _weatherData = parsedWeather
                     } else {
                         errorMessage = "InSight mission ended. Showing sample data."
                     }

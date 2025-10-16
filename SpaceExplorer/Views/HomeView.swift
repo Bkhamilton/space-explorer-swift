@@ -1,9 +1,14 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var pictures: [SpacePicture] = SpacePicture.sampleData
+    @State private var _pictures: [SpacePicture] = SpacePicture.sampleData
     @State private var isLoading = false
     @State private var errorMessage: String?
+    
+    // Public accessor for testing
+    var pictures: [SpacePicture] {
+        return _pictures
+    }
     
     var body: some View {
         NavigationView {
@@ -22,7 +27,7 @@ struct HomeView: View {
                         }
                 }
                 
-                List(pictures) { picture in
+                List(_pictures) { picture in
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Image(systemName: picture.imageName)
@@ -72,7 +77,7 @@ struct HomeView: View {
                 
                 switch result {
                 case .success(let apodResponses):
-                    pictures = apodResponses.map { SpacePicture(from: $0) }
+                    _pictures = apodResponses.map { SpacePicture(from: $0) }
                 case .failure(let error):
                     errorMessage = error.localizedDescription
                     // Keep sample data on error
