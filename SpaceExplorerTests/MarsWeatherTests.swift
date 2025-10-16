@@ -324,4 +324,3 @@ final class MarsWeatherTests: XCTestCase {
         }
     }
 }
-}
