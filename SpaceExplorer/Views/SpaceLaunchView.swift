@@ -25,11 +25,54 @@ struct SpaceLaunchView: View {
         NavigationView {
             List(filteredLaunches) { launch in
                 VStack(alignment: .leading, spacing: 10) {
-                    SpaceLaunchHeaderSection(launch: launch)
-                    SpaceLaunchAgencySection(launch: launch)
+                    HStack {
+                        Text(launch.name)
+                            .font(.headline)
+                        
+                        Spacer()
+                        
+                        Text(launch.status)
+                            .font(.caption)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 4)
+                            .background(statusColor(for: launch.status))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    
+                    HStack {
+                        Label(launch.agency, systemImage: "building.2")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                    
                     Divider()
-                    SpaceLaunchDateTypeSection(launch: launch)
-                    SpaceLaunchLocationSection(launch: launch)
+                    
+                    HStack(spacing: 15) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Label("Date", systemImage: "calendar")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text(launch.launchDate)
+                                .font(.subheadline)
+                        }
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .trailing, spacing: 4) {
+                            Label("Type", systemImage: "tag")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text(launch.missionType)
+                                .font(.subheadline)
+                        }
+                    }
+                    
+                    HStack {
+                        Label(launch.location, systemImage: "location.fill")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
                 }
                 .padding(.vertical, 8)
             }
@@ -44,7 +87,6 @@ struct SpaceLaunchView: View {
         }
     }
     
-    // statusColor logic moved to SpaceLaunchHeaderSection
     private func setupDebouncing() {
         searchSubject
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
@@ -52,7 +94,18 @@ struct SpaceLaunchView: View {
                 debouncedSearchText = searchValue
             }
             .store(in: &cancellables)
-    }    
+    }
+    
+    private func statusColor(for status: String) -> Color {
+        switch status {
+        case "Scheduled":
+            return .blue
+        case "Launched":
+            return .green
+        default:
+            return .gray
+        }
+    }
 }
 
 #Preview {
