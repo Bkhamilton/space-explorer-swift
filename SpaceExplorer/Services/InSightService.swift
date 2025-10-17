@@ -29,13 +29,14 @@ struct InSightWeatherData: Codable {
     let windSpeed: Double?
     
     enum CodingKeys: String, CodingKey {
+        case sol = "sol"
         case firstUTC = "First_UTC"
         case lastUTC = "Last_UTC"
         case season = "Season"
         case averageTemperature = "AT"
         case minTemperature = "PRE"
-        case maxTemperature = "PRE"
-        case pressure = "PRE"
+        case maxTemperature = "PRE2"
+        case pressure = "PRE3"
         case windSpeed = "HWS"
     }
 }
