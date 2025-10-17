@@ -80,7 +80,7 @@ class InSightService {
     func fetchMarsWeatherPublisher() -> AnyPublisher<[MarsWeather], Error> {
         let apiKey = APIConfiguration.nasaAPIKey
         guard let url = URL(string: "https://api.nasa.gov/insight_weather/?api_key=\(apiKey)&feedtype=json&ver=1.0") else {
-            return Fail(error: NSError(domain: "InSightService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
+            return Fail<[MarsWeather], Error>(error: NSError(domain: "InSightService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
                 .eraseToAnyPublisher()
         }
         
@@ -89,6 +89,8 @@ class InSightService {
             .map { [weak self] data in
                 self?.parseMarsWeatherData(from: data) ?? []
             }
+            // convert URLError (the publisher's Failure) to Error to match the function signature
+            .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }
     
