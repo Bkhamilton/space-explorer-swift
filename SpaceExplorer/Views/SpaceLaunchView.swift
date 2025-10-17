@@ -77,7 +77,7 @@ struct SpaceLaunchView: View {
                 .padding(.vertical, 8)
             }
             .searchable(text: $searchText, prompt: "Search launches")
-            .onChange(of: searchText) { oldValue, newValue in
+            .onChange(of: searchText) { newValue in
                 searchSubject.send(newValue)
             }
             .navigationTitle("Space Launches")

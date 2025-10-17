@@ -5,6 +5,9 @@ struct MarsView: View {
     @State private var _weatherData: [MarsWeather] = MarsWeather.sampleData
     @State private var isLoading = false
     @State private var errorMessage: String?
+
+    // keep Combine subscriptions
+    @State private var cancellables = Set<AnyCancellable>()
     
     // Public accessor for testing
     var weatherData: [MarsWeather] {
