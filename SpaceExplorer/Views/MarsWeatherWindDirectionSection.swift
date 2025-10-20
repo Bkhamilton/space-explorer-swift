@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MarsWeatherWindDirectionSection: View {
-    let mostCommon: MarsWindDirection.MostCommon
+    let mostCommon: WindDirectionData.mostCommon
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Label("Most Common Wind Direction", systemImage: "location.north.fill")
